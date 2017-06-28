@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:43:54 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/26 21:15:08 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/27 14:16:07 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_grid					*grid_new(int x, int y)
 	new->rows = x;
 	new->columns = y;
 	grid_init(new);
-	//printf("BUFFER:\n%s\n", new->buffer);
 	return (new);
 }
 

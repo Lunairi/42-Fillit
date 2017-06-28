@@ -7,13 +7,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 includes/fillit.h
-badd +38 inprogress/grid.c
-badd +19 inprogress/test.c
-badd +0 Makefile.m4
+badd +1 includes/fillit.h
+badd +1 inprogress/grid.c
+badd +1 Makefile.m4
+badd +25 ~/Documents/42/fillit/inprogress/gridtest.c
+badd +0 inprogress/recursive.c
 argglobal
 silent! argdel *
-argadd inprogress/grid.c
+argadd inprogress/recursive.c
 set stal=2
 edit includes/fillit.h
 set splitbelow splitright
@@ -31,56 +32,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 73 - ((60 * winheight(0) + 40) / 80)
+let s:l = 25 - ((24 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-73
-normal! 029|
-tabedit inprogress/grid.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winminwidth=1 winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 28 - ((27 * winheight(0) + 40) / 80)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-28
-normal! 0
-tabedit inprogress/test.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winminwidth=1 winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 40) / 80)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-19
-normal! 034|
+25
+normal! 025|
 tabedit Makefile.m4
 set splitbelow splitright
 set nosplitbelow
@@ -97,13 +54,57 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 43 - ((42 * winheight(0) + 40) / 80)
+let s:l = 24 - ((23 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-43
+24
+normal! 013|
+tabedit inprogress/recursive.c
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 65 - ((64 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+65
 normal! 0
-tabnext 2
+tabedit inprogress/grid.c
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 35 - ((34 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+35
+normal! 05|
+tabnext 3
 set stal=1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -21,7 +21,7 @@ define(SRC_DIRS, inprogress stable)
 define(SRC_DIRS2, patsubst(SRC_DIRS,` ',```,'''))
 divert(0)
 # For shared library
-CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE)
+CFLAGS = -g -Wall -Werror -Wextra -I$(INCLUDE)
 
 # -------------- Automated Variables ---------------- #
 # Fucking norm
@@ -39,7 +39,7 @@ all: $(NAME)
 
 # For shared library
 $(NAME): $(OBJ)
-	gcc $^ -o $@
+	gcc -g $^ -o $@
 
 clean:
 	/bin/rm -f $(OBJ)

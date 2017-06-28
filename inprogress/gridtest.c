@@ -6,12 +6,12 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:38:03 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/26 21:14:37 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/27 21:37:23 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
+/*
 int				main(int argc, char **argv)
 {
 	(void)argv;
@@ -22,4 +22,4 @@ int				main(int argc, char **argv)
 	grid->grid[3][3] = 'u';
 
 	printf("BUFFER:\n%s", grid->buffer);
-}
+}*/

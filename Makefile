@@ -15,12 +15,13 @@ NAME = fillit
 INCLUDE = includes/
 
 # For shared library
-CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE)
+CFLAGS = -g -Wall -Werror -Wextra -I$(INCLUDE)
 
 # -------------- Automated Variables ---------------- #
 # Fucking norm
 #SRC = $(wildcard $(addsuffix *.c, $(SRC_DIRS)))
-SRC = inprogress/test.c \
+SRC = inprogress/recursive.c \
+inprogress/gridtest.c \
 inprogress/grid.c \
 
 # For shared library
@@ -35,7 +36,7 @@ all: $(NAME)
 
 # For shared library
 $(NAME): $(OBJ)
-	gcc $^ -o $@
+	gcc -g $^ -o $@
 
 clean:
 	/bin/rm -f $(OBJ)
