@@ -29,10 +29,10 @@ int	ft_scan_ws(char *str, int i, int count)
 {
 	if (count == 4)
 		return (1);
-	if (str[i + 1] == '#')
+	if (str[i - 1] == '#')
 	{
 		count++;
-		i++;
+		i--;
 		return (ft_scan_ws(*str, i, count));
 	}
 	else if (str[i + 5] == '#')
@@ -64,7 +64,7 @@ int	ft_scan_wes(char *str, int i, int count)
 	else if (str[i - 1] == '#')
 	{
 		count++;
-		i = i + 5;
+		i--;
 		return (ft_scan_ws(*str, i, count));
 	}
 	else
