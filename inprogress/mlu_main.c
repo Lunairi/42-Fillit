@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 
-#include "lydeka.h"
+#include "utility.h"
 #define BUF_SIZE 21
 
 void		ft_putchar(char c)
