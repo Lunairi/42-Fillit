@@ -89,6 +89,9 @@ char	*read_input(int fd)
 		temp = (char*)malloc(sizeof(*temp) * (memory + 1));
 	}
 	free(temp);
+	ft_putstr("Displaying input, this has already been malloced and added into a single string array.");
+	ft_putchar('\n');
+	ft_putstr(output);
 	return (output);
 }
 

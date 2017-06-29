@@ -151,6 +151,7 @@ int	ft_isvalid(char *str)
 	ft_putstr("Initializing validation method.\n");
 	while (++i < (g_size + 21) && str[i] != '\0')
 	{
+		g_track++;
 		if (g_track == 5 && str[i] != '\n')
 		{
 			ft_putstr("Error: Inappropriate new lines.\n");
@@ -160,7 +161,7 @@ int	ft_isvalid(char *str)
 			ft_putchar('\n');
 			return (0);
 		}
-		else if (g_track != 5 && !(str[i] != '#' || str[i] != '.'))
+		else if (g_track != 5 && !(str[i] == '#' || str[i] == '.') && (i != (g_size + 20)))
 		{
 			ft_putstr("Error: Inappropriate symbols.\n");
 			ft_putchar(str[i]);
@@ -171,7 +172,6 @@ int	ft_isvalid(char *str)
 		}
 		if (str[i] == '#')
 			count++;
-		g_track++;
 		if (g_track == 5)
 			g_track = 0;
 	}
@@ -180,11 +180,15 @@ int	ft_isvalid(char *str)
 	if (str[i] != '\0')
 	{
 		g_size = g_size + 21;
+		g_track = 0;
 		return (ft_isvalid(str));
 	}
 	if (str[i] == '\0')
 	{
 		g_square = ft_sqrt(((g_size / 21) + 1) * 4);
+		ft_putstr("Number of pieces: ");
+		ft_putnbr((g_size / 21) + 1);
+		ft_putchar('\n');
 		ft_putstr("Grid Size: ");
 		ft_putnbr(g_square);
 		ft_putchar('x');
