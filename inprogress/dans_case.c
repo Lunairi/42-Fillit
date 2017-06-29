@@ -6,20 +6,21 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/28 17:39:03 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/28 19:22:50 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/29 15:39:10 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
+/*
 void			write_shape(t_shape **ptr, char *s, char ltr, int gsize)
 {
 	t_shape *shape = parse_shape(s, ltr, gsize);
 	(*(ptr))->next = shape;
 	*ptr = (*(ptr))->next;
-}
+}*/
 
-
+/*
 int				main()
 {
 	t_shape *start_shape;
@@ -27,7 +28,7 @@ int				main()
 
 
 	int expected_gsize = 7;
-	start_shape = parse_shape("##..\n.#..\n.#..\n....\n", 'A', expected_gsize);
+	start_shape = parse_shape("##..\n.#..\n.#..\n....\n\n", 'A', expected_gsize);
 	last_shape = start_shape;
 	write_shape(&last_shape, "####\n....\n....\n....\n", 'B', expected_gsize);
 	write_shape(&last_shape, ".#..\n##..\n#...\n....\n", 'C', expected_gsize);
@@ -45,6 +46,7 @@ int				main()
 	printf("SOLUTION:\n%s\n", grid->buffer);
 	return (0);
 }
+*/
 /*
 int				main()
 {

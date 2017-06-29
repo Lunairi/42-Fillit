@@ -14,8 +14,12 @@ badd +25 ~/Documents/42/fillit/inprogress/gridtest.c
 badd +1 inprogress/recursive.c
 badd +1 inprogress/parser.c
 badd +34 tommyboy
-badd +0 inprogress/dans_case.c
+badd +1 inprogress/dans_case.c
 badd +1 dans_case.c
+badd +0 inprogress/mlu_main.c
+badd +62 inprogress/shape_parsing.c
+badd +0 inprogress/shape_validate.c
+badd +0 includes/lydeka.h
 argglobal
 silent! argdel *
 argadd inprogress/dans_case.c
@@ -36,12 +40,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 48 - ((47 * winheight(0) + 40) / 80)
+let s:l = 1 - ((0 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-48
-normal! 057|
+1
+normal! 028|
 tabedit Makefile.m4
 set splitbelow splitright
 set nosplitbelow
@@ -66,28 +70,10 @@ normal! zt
 normal! 031|
 tabedit inprogress/grid.c
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winminwidth=1 winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 91) / 182)
-exe 'vert 2resize ' . ((&columns * 150 + 91) / 182)
-argglobal
-enew
-file NERD_tree_1
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-wincmd w
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -98,15 +84,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 40) / 80)
+let s:l = 1 - ((0 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 91) / 182)
-exe 'vert 2resize ' . ((&columns * 150 + 91) / 182)
+1
+normal! 081|
 tabedit inprogress/recursive.c
 set splitbelow splitright
 set nosplitbelow
@@ -123,12 +106,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 44 - ((43 * winheight(0) + 40) / 80)
+let s:l = 31 - ((30 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-44
-normal! 019|
+31
+normal! 02|
 tabedit inprogress/parser.c
 set splitbelow splitright
 set nosplitbelow
@@ -145,12 +128,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 69 - ((68 * winheight(0) + 40) / 80)
+let s:l = 26 - ((25 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-69
-normal! 0
+26
+normal! 023|
 tabedit inprogress/dans_case.c
 set splitbelow splitright
 set nosplitbelow
@@ -167,13 +150,101 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 78 - ((74 * winheight(0) + 40) / 80)
+let s:l = 39 - ((38 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+39
+normal! 045|
+tabedit inprogress/mlu_main.c
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 122 - ((55 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+122
+normal! 050|
+tabedit inprogress/shape_parsing.c
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 78 - ((50 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 78
-normal! 016|
-tabnext 6
+normal! 018|
+tabedit inprogress/shape_validate.c
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 161 - ((0 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+161
+normal! 0
+tabedit includes/lydeka.h
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 15 - ((14 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+15
+normal! 021|
+tabnext 7
 set stal=1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

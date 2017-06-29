@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/28 11:58:19 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/28 18:33:10 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/29 15:45:30 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_shape				*parse_shape(char *arr, char ltr, int expected_gridsize)
 	int				c;
 	int				mul;
 
-	//printf("SHAPE:\n%s\n", arr);
+	printf("SHAPE:\n%s\n", arr);
 	shape = new_shape(ltr);
 	fill_offsets(shape, arr);
 	i = -1;

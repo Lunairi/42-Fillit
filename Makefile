@@ -20,8 +20,11 @@ CFLAGS = -g -Wall -Werror -Wextra -I$(INCLUDE)
 # -------------- Automated Variables ---------------- #
 # Fucking norm
 #SRC = $(wildcard $(addsuffix *.c, $(SRC_DIRS)))
-SRC = inprogress/dans_case.c \
+SRC = inprogress/mlu_main.c \
+inprogress/dans_case.c \
+inprogress/shape_parsing.c \
 inprogress/parser.c \
+inprogress/shape_validate.c \
 inprogress/recursive.c \
 inprogress/gridtest.c \
 inprogress/grid.c \
