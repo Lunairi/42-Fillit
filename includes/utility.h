@@ -21,12 +21,12 @@
 # include <stdio.h>
 # include <sys/stat.h>
 
-int	ft_isvalid(char *str, int i, int count);
-int	ft_scan_wes(char *str, int i, int count);
-int	ft_scan_ws(char *str, int i, int count);
-int	ft_scan_es(char *str, int i, int count);
-void ft_parseshapes(char *str, int gridsize, t_shape **last_shape);
-int	ft_sqrt(int nb);
-int	ft_scan(char *str);
+int		ft_isvalid(char *str, int i, int count);
+int		ft_scan_wes(char *str, int i, int count);
+int		ft_scan_ws(char *str, int i, int count);
+int		ft_scan_es(char *str, int i, int count);
+void	ft_parseshapes(char *str, int gridsize, t_shape **last_shape);
+int		ft_scan(char *str);
+int		ft_validate(char *str);
 
 #endif

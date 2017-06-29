@@ -72,7 +72,6 @@ int	ft_validate(char *str)
 	g_size = 0;
 	g_track = 0;
 	shape = ft_isvalid(str, -1, 0);
-	ft_putnbr(shape);
 	if (shape != 0)
 		return (g_square);
 	return (0);

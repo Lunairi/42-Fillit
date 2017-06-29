@@ -28,6 +28,7 @@ inprogress/shape_validate.c \
 inprogress/recursive.c \
 inprogress/gridtest.c \
 inprogress/grid.c \
+inprogress/shape_scanning.c \
 
 # For shared library
 OBJ = $(subst .c,.o, $(SRC))
