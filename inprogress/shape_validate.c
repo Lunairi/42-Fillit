@@ -10,25 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*     1      2      3      4      5      6      7      8      9     10   */
-/*   ####   ###.   ###.   ###.   ##..   ##..   ##..   ##..   #...   #...  */
-/*   ....   #...   .#..   ..#.   ##..   #...   .##.   .#..   ###.   ##..  */
-/*   ....   ....   ....   ....   ....   #...   ....   .#..   ....   .#..  */
-/*   ....   ....   ....   ....   ....   ....   ....   ....   ....   ....  */
-
-/*    11     12     13     14     15     16     17     18     19   */
-/*   #...   #...   #...   .##.   .#..   .#..   .#..   .#..   ..#.  */
-/*   ##..   #...   #...   ##..   ###.   ##..   ##..   .#..   ###.  */
-/*   #...   ##..   #...   ....   ....   #...   .#..   ##..   ....  */
-/*   ....   ....   #...   ....   ....   ....   ....   ....   ....  */
-
-
 #include "utility.h"
+
 int g_size;
 int g_square;
 int g_track;
 
-int			ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
 	int i;
 
@@ -38,14 +26,22 @@ int			ft_sqrt(int nb)
 	return (i);
 }
 
+int	ft_checkvalue(char *str, int track, int i, int size)
+{
+	if (track == 5 && str[i] != '\n')
+		return (0);
+	else if (track != 5 && !(str[i] == '#'
+		|| str[i] == '.') && (i != (size + 20)))
+		return (0);
+	return (1);
+}
+
 int	ft_isvalid(char *str, int i, int count)
 {
 	while (++i < (g_size + 21) && str[i] != '\0')
 	{
 		g_track++;
-		if (g_track == 5 && str[i] != '\n')
-			return (0);
-		else if (g_track != 5 && !(str[i] == '#' || str[i] == '.') && (i != (g_size + 20)))
+		if (!(ft_checkvalue(str, g_track, i, g_size)))
 			return (0);
 		if (str[i] == '#')
 			count++;
@@ -68,7 +64,7 @@ int	ft_isvalid(char *str, int i, int count)
 	return (0);
 }
 
-int ft_validate(char *str)
+int	ft_validate(char *str)
 {
 	int shape;
 

@@ -18,15 +18,13 @@ int	ft_scan_ws(char *str, int i, int count)
 		return (1);
 	if (str[i - 1] == '#')
 	{
-		count++;
 		i--;
-		return (ft_scan_ws(str, i, count));
+		return (ft_scan_ws(str, i, count + 1));
 	}
 	else if (str[i + 5] == '#')
 	{
-		count++;
 		i = i + 5;
-		return (ft_scan_wes(str, i, count));
+		return (ft_scan_wes(str, i, count + 1));
 	}
 	return (0);
 }
@@ -37,21 +35,18 @@ int	ft_scan_wes(char *str, int i, int count)
 		return (1);
 	if (str[i + 1] == '#')
 	{
-		count++;
 		i++;
-		return (ft_scan_es(str, i, count));
+		return (ft_scan_es(str, i, count + 1));
 	}
 	else if (str[i + 5] == '#')
 	{
-		count++;
 		i = i + 5;
-		return (ft_scan_wes(str, i, count));
+		return (ft_scan_wes(str, i, count + 1));
 	}
 	else if (str[i - 1] == '#')
 	{
-		count++;
 		i--;
-		return (ft_scan_ws(str, i, count));
+		return (ft_scan_ws(str, i, count + 1));
 	}
 	return (0);
 }
@@ -62,27 +57,23 @@ int	ft_scan_es(char *str, int i, int count)
 		return (1);
 	if (str[i + 1] == '#')
 	{
-		count++;
 		i++;
-		return (ft_scan_es(str, i, count));
+		return (ft_scan_es(str, i, count + 1));
 	}
 	else if (str[i + 5] == '#')
 	{
-		count++;
 		i = i + 5;
-		return (ft_scan_wes(str, i, count));
+		return (ft_scan_wes(str, i, count + 1));
 	}
 	else if (str[i + 4] == '#')
 	{
-		count++;
 		i = i + 4;
-		return (ft_scan_wes(str, i, count));
+		return (ft_scan_wes(str, i, count + 1));
 	}
 	else if (str[i + 3] == '#' && str[i - 2] == '#')
 	{
-		count++;
 		i = i + 3;
-		return (ft_scan_wes(str, i, count));
+		return (ft_scan_wes(str, i, count + 1));
 	}
 	return (0);
 }

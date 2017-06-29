@@ -88,9 +88,6 @@ char	*read_input(int fd)
 		temp = (char*)malloc(sizeof(*temp) * (memory + 1));
 	}
 	free(temp);
-	ft_putstr("Displaying input, this has already been malloced and added into a single string array.");
-	ft_putchar('\n');
-	ft_putstr(output);
 	return (output);
 }
 
@@ -111,7 +108,6 @@ int		main(int ac, char **av)
 	{
 		fd = open(av[1], O_RDONLY);
 		list = read_input(fd);
-		ft_putstr("String created\n"); /*******/
 		mluisreallypicky = ft_validate(list);
 		start_shape = new_shape('@');
 		last_shape = start_shape;
@@ -120,11 +116,10 @@ int		main(int ac, char **av)
 			ft_parseshapes(list, mluisreallypicky, &last_shape);
 			t_grid *gridpls = grid_new(mluisreallypicky, mluisreallypicky);
 			solve_grid(gridpls, start_shape->next);
-			ft_putstr("Victim of mlu's pms.");
 			printf("\nSOLUTION:\n%s\n", gridpls->buffer);
 		}
 		else
-			ft_putstr("fail?\n");
+			ft_putstr("error\n");
 	}
 	return (0);
 }
