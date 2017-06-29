@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:25:47 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/27 21:34:56 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/28 17:39:57 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,7 @@ typedef struct 			s_grid
 
 t_grid					*grid_new(int x, int y);
 void					grid_init(t_grid *grid);
+int						solve_grid(t_grid *grid, t_shape *shape);
+t_shape					*new_shape(char ltr);
+t_shape					*parse_shape(char *arr, char ltr, int expected_gridsize);
 #endif

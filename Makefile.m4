@@ -3,7 +3,7 @@
 #*                                                        :::      ::::::::   */
 #*   Makefile                                           :+:      :+:    :+:   */
 #*                                                    +:+ +:+         +:+     */
-#*   By: jkrause <jkrause@student.42.us.org>      e  +#+  +:+       +#+        */
+#*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 #*                                                +#+#+#+#+#+   +#+           */
 #*   Created: 2017/04/18 03:42:42 by jkrause           #+#    #+#             */
 #*   Updated: 2017/06/11 02:45:14 by jkrause          ###   ########.fr       *#

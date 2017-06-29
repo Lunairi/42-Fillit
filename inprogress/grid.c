@@ -6,7 +6,7 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 19:43:54 by jkrause           #+#    #+#             */
-/*   Updated: 2017/06/27 14:16:07 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/06/28 12:07:59 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void					grid_init(t_grid *grid)
 			grid->grid[i][j] = '.';
 		grid->grid[i][j] = '\n';
 	}
-	grid->grid[grid->rows] = "\0";
+	grid->buffer[(grid->rows * grid->columns + 1) + grid->columns - 2] = '\0';
 }

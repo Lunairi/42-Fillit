@@ -3,7 +3,7 @@
 #*                                                        :::      ::::::::   */
 #*   Makefile                                           :+:      :+:    :+:   */
 #*                                                    +:+ +:+         +:+     */
-#*   By: jkrause <jkrause@student.42.us.org>      e  +#+  +:+       +#+        */
+#*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 #*                                                +#+#+#+#+#+   +#+           */
 #*   Created: 2017/04/18 03:42:42 by jkrause           #+#    #+#             */
 #*   Updated: 2017/06/11 02:45:14 by jkrause          ###   ########.fr       *#
@@ -20,7 +20,9 @@ CFLAGS = -g -Wall -Werror -Wextra -I$(INCLUDE)
 # -------------- Automated Variables ---------------- #
 # Fucking norm
 #SRC = $(wildcard $(addsuffix *.c, $(SRC_DIRS)))
-SRC = inprogress/recursive.c \
+SRC = inprogress/dans_case.c \
+inprogress/parser.c \
+inprogress/recursive.c \
 inprogress/gridtest.c \
 inprogress/grid.c \
 
