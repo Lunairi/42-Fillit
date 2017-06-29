@@ -209,6 +209,7 @@ int ft_validate(char *str)
 	ft_putstr("Checking validation.\n");
 	shape = ft_isvalid(str);
 	ft_putnbr(shape);
+	ft_parseshapes(str, 0);
 	if (shape != 0)
 		return (1);
 	else

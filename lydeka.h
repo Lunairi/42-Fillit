@@ -24,5 +24,6 @@ int	ft_scan_wes(char *str, int i, int count);
 int	ft_scan_es(char *str, int i, int count);
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
+int	ft_parseshapes(char *str, int parse);
 
 #endif
