@@ -53,6 +53,9 @@ void	ft_putnbr(int n)
 
 int	ft_scan_ws(char *str, int i, int count)
 {
+		ft_putstr("Check count\n");
+	ft_putnbr(count);
+	ft_putchar('\n');
 	if (count == 4)
 		return (1);
 	if (str[i - 1] == '#')
@@ -72,6 +75,9 @@ int	ft_scan_ws(char *str, int i, int count)
 
 int	ft_scan_wes(char *str, int i, int count)
 {
+		ft_putstr("Check count\n");
+	ft_putnbr(count);
+	ft_putchar('\n');
 	if (count == 4)
 		return (1);
 	if (str[i + 1] == '#')
@@ -97,6 +103,9 @@ int	ft_scan_wes(char *str, int i, int count)
 
 int	ft_scan_es(char *str, int i, int count)
 {
+		ft_putstr("Check count\n");
+	ft_putnbr(count);
+	ft_putchar('\n');
 	if (count == 4)
 		return (1);
 	if (str[i + 1] == '#')
@@ -111,6 +120,18 @@ int	ft_scan_es(char *str, int i, int count)
 		i = i + 5;
 		return (ft_scan_wes(str, i, count));
 	}
+	else if (str[i + 4] == '#')
+	{
+		count++;
+		i = i + 4;
+		return (ft_scan_wes(str, i, count));
+	}
+	else if (str[i + 3] == '#' && str[i - 2] == '#')
+	{
+		count++;
+		i = i + 3;
+		return (ft_scan_wes(str, i, count));
+	}
 	return (0);
 }
 
@@ -121,6 +142,9 @@ int	ft_scan(char *str)
 
 	i = 0;
 	count = 0;
+		ft_putstr("Check count\n");
+	ft_putnbr(count);
+	ft_putchar('\n');
 	while (str[i] != '#')
 		i++;
 	count++;
