@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "utility.h"
-#define BUF_SIZE 21
 
 void			write_shape(t_shape **ptr, char *s, int gsize)
 {
