@@ -13,16 +13,6 @@
 #include "utility.h"
 #define BUF_SIZE 21
 
-int			ft_sqrt(int nb)
-{
-	int i;
-
-	i = 0;
-	while ((i * i) <= nb)
-		i++;
-	return (i);
-}
-
 void			write_shape(t_shape **ptr, char *s, int gsize)
 {
 	t_shape *shape;

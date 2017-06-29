@@ -28,6 +28,16 @@ int g_size;
 int g_square;
 int g_track;
 
+int			ft_sqrt(int nb)
+{
+	int i;
+
+	i = 0;
+	while ((i * i) <= nb)
+		i++;
+	return (i);
+}
+
 int	ft_isvalid(char *str, int i, int count)
 {
 	while (++i < (g_size + 21) && str[i] != '\0')
