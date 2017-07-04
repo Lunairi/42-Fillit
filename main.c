@@ -6,9 +6,13 @@
 /*   By: mlu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 09:48:41 by mlu               #+#    #+#             */
-/*   Updated: 2017/04/24 09:48:42 by mlu              ###   ########.fr       */
+/*   Updated: 2017/07/03 17:47:58 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "utility.h"
+#include "fillit.h"
+#define BUF_SIZE 21
 
 char	*read_input(int fd)
 {
@@ -36,19 +40,43 @@ char	*read_input(int fd)
 	return (output);
 }
 
+void	solve_gridprint(char *list, int mluisreallypicky)
+{
+	t_shape	*start_shape;
+	t_shape	*last_shape;
+	t_grid	*gridpls;
+
+	start_shape = new_shape('@');
+	last_shape = start_shape;
+	ft_parseshapes(list, mluisreallypicky, &last_shape);
+	gridpls = grid_new(mluisreallypicky, mluisreallypicky);
+	if (!solve_grid(gridpls, start_shape->next))
+	{
+		free(gridpls);
+		last_shape = start_shape;
+		ft_parseshapes(list, mluisreallypicky + 1, &last_shape);
+		gridpls = grid_new(mluisreallypicky + 1, mluisreallypicky + 1);
+		solve_grid(gridpls, start_shape->next);
+	}
+	ft_putstr(gridpls->buffer);
+	ft_putstr("\n");
+}
+
 int		main(int ac, char **av)
 {
 	char	*list;
+	int		mluisreallypicky;
 
 	if (ac != 2)
 	{
-		ft_putstr_err("error\n");
+		ft_putstr("error\n");
 		return (0);
 	}
+	list = read_input(open(av[1], O_RDONLY));
+	mluisreallypicky = ft_validate(list);
+	if (mluisreallypicky > 0)
+		solve_gridprint(list, mluisreallypicky);
 	else
-	{
-		list = read_input(0);
-		// validation here
-	}
+		ft_putstr("error\n");
 	return (0);
 }
