@@ -6,7 +6,7 @@
 /*   By: mlu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 09:48:41 by mlu               #+#    #+#             */
-/*   Updated: 2017/06/29 15:51:34 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/07/03 17:47:58 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,32 @@ char	*read_input(int fd)
 	return (output);
 }
 
+void	solve_gridprint(char *list, int mluisreallypicky)
+{
+	t_shape	*start_shape;
+	t_shape	*last_shape;
+	t_grid	*gridpls;
+
+	start_shape = new_shape('@');
+	last_shape = start_shape;
+	ft_parseshapes(list, mluisreallypicky, &last_shape);
+	gridpls = grid_new(mluisreallypicky, mluisreallypicky);
+	if (!solve_grid(gridpls, start_shape->next))
+	{
+		free(gridpls);
+		last_shape = start_shape;
+		ft_parseshapes(list, mluisreallypicky + 1, &last_shape);
+		gridpls = grid_new(mluisreallypicky + 1, mluisreallypicky + 1);
+		solve_grid(gridpls, start_shape->next);
+	}
+	ft_putstr(gridpls->buffer);
+	ft_putstr("\n");
+}
+
 int		main(int ac, char **av)
 {
 	char	*list;
 	int		mluisreallypicky;
-	t_shape	*start_shape;
-	t_shape	*last_shape;
-	t_grid	*gridpls;
 
 	if (ac != 2)
 	{
@@ -55,15 +74,8 @@ int		main(int ac, char **av)
 	}
 	list = read_input(open(av[1], O_RDONLY));
 	mluisreallypicky = ft_validate(list);
-	start_shape = new_shape('@');
-	last_shape = start_shape;
 	if (mluisreallypicky > 0)
-	{
-		ft_parseshapes(list, mluisreallypicky, &last_shape);
-		gridpls = grid_new(mluisreallypicky, mluisreallypicky);
-		solve_grid(gridpls, start_shape->next);
-		ft_putstr(gridpls->buffer);
-	}
+		solve_gridprint(list, mluisreallypicky);
 	else
 		ft_putstr("error\n");
 	return (0);

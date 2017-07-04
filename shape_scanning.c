@@ -6,7 +6,7 @@
 /*   By: mlu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 09:48:41 by mlu               #+#    #+#             */
-/*   Updated: 2017/06/29 15:28:58 by jkrause          ###   ########.fr       */
+/*   Updated: 2017/07/03 17:26:51 by jkrause          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,6 @@ int	ft_scan_start(char *str, int i, int count)
 			return (0);
 		return (1);
 	}
-	else if (str[i + 5] == '#')
-	{
-		if (!ft_scan_wes(str, i + 5, count + 1))
-			return (0);
-		return (1);
-	}
 	else if (str[i + 3] == '#' && str[i + 4] == '#' && str[i + 5] == '#')
 	{
 		if (!ft_scan_es(str, i + 3, count + 1))
@@ -79,6 +73,12 @@ int	ft_scan_start(char *str, int i, int count)
 			return (0);
 		return (1);
 	}
+	else if (str[i + 5] == '#')
+	{
+		if (!ft_scan_wes(str, i + 5, count + 1))
+			return (0);
+		return (1);
+	}
 	return (0);
 }
 
@@ -88,6 +88,8 @@ int	ft_scan(char *str, int shape, int track)
 	int count;
 
 	i = 0;
+	if (shape > 26)
+		return (0);
 	while (++track < shape)
 	{
 		i = (track * 21);
