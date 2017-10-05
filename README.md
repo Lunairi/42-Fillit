@@ -6,3 +6,7 @@ for days and what makes absolutely no sense is that this paragraph has actually 
 the submission of their project and is there to show how much Dan gets trolled on a daily basis.
 
 This is brought to you by Covfefe Broadcasting Corporation.
+
+//
+
+First group project with a great friend, asides from joke it was pretty new to me about how to dynamically allocate memory, parse information and use a simple algorithm for error checking/handling.
