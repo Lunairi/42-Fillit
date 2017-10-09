@@ -10,3 +10,5 @@ This is brought to you by Covfefe Broadcasting Corporation.
 //
 
 First group project with a great friend, asides from joke it was pretty new to me about how to dynamically allocate memory, parse information and use a simple algorithm for error checking/handling.
+
+Joe Krause https://github.com/SuperSpyTX/
